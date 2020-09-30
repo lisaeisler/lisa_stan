@@ -10,3 +10,9 @@ library(tidyverse)
 library(haven)
 library(viridis)
 ```
+
+## Data import 
+
+```{r, message=FALSE, warning=FALSE}
+nsqipspine_1618 = read_csv("./data/unescaped.csv")
+```
