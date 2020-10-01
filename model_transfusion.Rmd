@@ -14,5 +14,5 @@ library(viridis)
 ## Data import 
 
 ```{r, message=FALSE, warning=FALSE}
-nsqipspine_1618 = read_csv("./data/unescaped.csv")
+nsqipspine_1618 = read_csv("./data/nsqipspine1618.csv")
 ```
