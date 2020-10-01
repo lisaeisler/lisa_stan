@@ -16,3 +16,20 @@ library(viridis)
 ```{r, message=FALSE, warning=FALSE}
 nsqipspine_1618 = read_csv("./data/nsqipspine1618.csv")
 ```
+
+```{r, message=FALSE, warning=FALSE}
+nsqipspine_tidy = nsqipspine_1618 %>%
+  mutate_if(is.numeric, ~replace(., . == -99, NA)) 
+```
+
+##Sex
+```{r, message=FALSE, warning=FALSE}
+xtabs(~ sex + perioptransfusion, data = nsqipspine_tidy)
+```
+
+no cells with counts<=5
+```{r, message=FALSE, warning=FALSE}
+tbl<-xtabs(~ sex + perioptransfusion, data = nsqipspine_tidy)
+chisq.test(tbl) 
+```
+Chi-square test reveals a significant negative association between female sex and perioperative transfusion (p<.05).
