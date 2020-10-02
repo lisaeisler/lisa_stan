@@ -33,3 +33,15 @@ tbl<-xtabs(~ sex + perioptransfusion, data = nsqipspine_tidy)
 chisq.test(tbl) 
 ```
 Chi-square test reveals a significant negative association between female sex and perioperative transfusion (p<.05).
+
+##cardiac
+```{r, message=FALSE, warning=FALSE}
+xtabs(~ cardiac + perioptransfusion, data = nsqipspine_tidy)
+```
+
+no cells with counts<=5
+```{r, message=FALSE, warning=FALSE}
+tbl<-xtabs(~ cardiac + perioptransfusion, data = nsqipspine_tidy)
+chisq.test(tbl) 
+```
+Chi-square test reveals a significant positive association between cardiac risk factors and perioperative transfusion (p<.05).
